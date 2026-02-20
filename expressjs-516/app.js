@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Include routes from different modules
 app.use('/', require('./routes/index'));
 app.use('/tags', require('./routes/tags'));
+app.use('/categories', require('./routes/categories'));
 
 app.listen(PORT, () => {
   console.log(`App is running on http://localhost:${PORT}`);

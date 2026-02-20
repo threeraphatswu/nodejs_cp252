@@ -9,10 +9,10 @@
 <body>
   <h2>Edit Note</h2>
   <form action="/edit/<%= note.id %>" method="post">
-    <label for="title">Title:</label>
+    <label for="Subject">Title:</label>
     <input type="text" id="title" name="title" value="<%= note.title %>" required>
     <br>
-    <label for="content">Content:</label>
+    <label for="Data">Content:</label>
     <textarea id="content" name="content" required><%= note.content %></textarea>
     <br>
     <button type="submit">Update Note</button>
