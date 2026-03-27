@@ -11,7 +11,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Zip application
-        run: |
+        run: | 
+          cd jestway
           zip -r app.zip . -x "*.git*" "test/*"
 
       - name: Configure AWS credentials
@@ -23,11 +24,12 @@ jobs:
           aws-region: us-east-1   # change if needed
 
       - name: Upload to S3
-        run: |
+        run: | 
+          cd jestway
           aws s3 cp app.zip s3://${{ secrets.S3_BUCKET }}/app-${{ github.sha }}.zip
 
       - name: Create new application version
-        run: |
+        run: | 
           aws elasticbeanstalk create-application-version \
             --application-name "${{ secrets.EB_APP_NAME }}" \
             --version-label "${{ github.sha }}" \
