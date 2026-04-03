@@ -1,0 +1,25 @@
+{
+  "name": "wpnode",
+  "version": "1.0.0",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll=false --coverage --testResultsProcessor ./node_modules/jest-junit-reporter --coverageReporters cobertura"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://c64000@dev.azure.com/c64000/c64000/_git/wpnode"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "jest": "^27.5.1",
+    "jest-junit-reporter": "^1.1.0",
+    "request": "^2.88.2"
+  },
+  "dependencies": {
+    "@sentry/node": "^10.47.0"
+  }
+}

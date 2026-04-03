@@ -1,0 +1,46 @@
+<%- include('./partials/header'); %>
+<main>
+ <div class="ui segment">
+   <h1>Demo</h1>
+   <p>Getting post from any wordpress site using Express+EJS</p>
+ </div>
+
+ <form action='/result' method='post'> 
+  <br><input name='urlstr' type='text' placeholder="http://wordpress"> <input type='submit' value='submit'>
+ </form>  
+  
+ <h2>Result </h2>
+ 
+ <p> Max length = <%= maxdata %>
+ <p> Min length = <%= mindata %>
+ <p>
+  <% if (dstack) { %>
+    <form action="/pop">
+      <button name='pop'>pop</button>
+    </form>
+  <% } %>
+
+
+ <table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Subject</th>
+    <th>Subject length</th>
+  </tr>
+  <% for(var i=0; i < data.length; i++) { %>
+     <tr>
+       <td><%= data[i].id %></td>
+       <td><%= data[i].title.rendered %></td>
+       <td><%= data[i].title.rendered.length %></td>
+     </tr>
+  <% } %>
+  </table>
+  
+</main>
+
+<footer>
+  <%- include('./partials/footer'); %>
+</footer>
+
+  </body> 
+  </html>
